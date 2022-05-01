@@ -27,37 +27,43 @@ def main():
     # get the user number as a string
     print("Today, we will be calcuating the GCF of two given numbers.")
     print("")
-    user_num_1_string = input("Enter the first whole number: ")
-    user_num_2_string = input("Enter the second whole number: ")
+    user_num_string = input("Enter the first whole number: ")
+    user_num2_string = input("Enter the second whole number: ")
     print("")
 
     try:
         # converts user input to integer
-        user_num_int = int(user_num_1_string)
+        user_num = int(user_num_string)
         try:
-            user_num2_int = int(user_num_2_string)
-
-        # sets a range.
-            if user_num_int and user_num2_int >= 0:
-                # calculates the gcf of the two numbers user has entered and then
-                # displays it
-                for counter in range(user_num_int, 0, -1):
-                    if user_num_int % counter == 0 and user_num2_int % counter == 0:
-                        break
-                print("The GCF of {} and {} is {}."
-                              .format(user_num_int, user_num2_int, counter)) 
-                print("")
-                ask_again()
+            user_num2 = int(user_num2_string)
+          
+            # sets a range.
+            if user_num >= 0:
+                if user_num2 >= 0:
+                    # calculates the gcf of the two numbers user has entered
+                    # and then it displays it.
+                    for counter in range(user_num, 0, -1):
+                        if user_num % counter == 0 and user_num2 % counter == 0:
+                            break
+                    print("The GCF of {} and {} is {}."
+                          .format(user_num, user_num2, counter))
+                    print("")
+                    ask_again()
+                else:
+                    print("Invalid entry. Please enter a whole number.")
+                    print("")
+                    ask_again()
             else:
-                print("Invalid enteries. Please enter a whole number.")
+                print("Invalid entry, please enter a whole number.")
                 print("")
                 ask_again()
+        # handles any possible errors.
         except Exception:
-           print("{} is not a valid number.".format(user_num_2_string))
-           ask_again()
+            print("{} is not a valid number.".format(user_num2_string))
+            ask_again()
     # handles any possible errors.
     except Exception:
-        print("{} is not a valid number.". format(user_num_1_string))
+        print("{} is not a valid number.". format(user_num_string))
         ask_again()
 
 
