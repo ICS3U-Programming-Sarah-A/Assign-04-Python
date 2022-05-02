@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 # Created by: Sarah
-# Created on: Apr, 20, 2022
-# This program asks the user to enter a number. It then displays the
-# square of each number from 0 until that user_number using for loops.
+# Created on: April 26, 2022.
+# This program asks the user to enter two positive numbers. It then calculates
+# the gcf of those two numbers using a for loop. It also asks the user if they
+# would like to play again.
 
 
 # A function that allows the user to play again.
@@ -16,7 +17,7 @@ def ask_again():
         print("Thanks for playing!")
     else:
         print("Please enter either or being (y/n). ")
-        # returns the funcition
+        # returns the funciton
         return ask_again()
 
 
@@ -35,15 +36,17 @@ def main():
         # converts user input to integer
         user_num = int(user_num_string)
         try:
+            # converts user input to integer
             user_num2 = int(user_num2_string)
-          
+
             # sets a range.
             if user_num >= 0:
                 if user_num2 >= 0:
                     # calculates the gcf of the two numbers user has entered
                     # and then it displays it.
                     for counter in range(user_num, 0, -1):
-                        if user_num % counter == 0 and user_num2 % counter == 0:
+                        if user_num % counter == 0 and \
+                          user_num2 % counter == 0:
                             break
                     print("The GCF of {} and {} is {}."
                           .format(user_num, user_num2, counter))
